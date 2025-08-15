@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¡Viva la Antioqueñidad!</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#289367',
+            secondary: '#E8F5EE',
+            accent: '#D4A945',
+            ink: '#16211A',
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.08)'
+          },
+          backgroundImage: {
+            'paisaje': "url('https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=1480&auto=format&fit=crop')",
+            'textura': "url('https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=1480&auto=format&fit=crop')"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+  <!-- Animaciones -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    :root { --rounded: 1.25rem; }
+    .card { border-radius: var(--rounded); box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.7); }
+    .clip-wave { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .section-badge { letter-spacing:.06em; }
+
+    /* Botón flotante de tema */
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.4s ease, background 0.4s ease;
+      z-index: 9999;
+    }
+    .theme-toggle:hover {
+      background: rgba(0,0,0,0.8);
+      transform: scale(1.1) rotate(15deg);
+    }
+    .icon {
+      font-size: 1.5rem;
+      transition: transform 0.5s ease;
+    }
+    .rotate {
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+
+<body class="bg-secondary text-ink antialiased dark:bg-gray-900 dark:text-neutral-100">
+
+  <!-- Botón flotante -->
+  <div id="theme-toggle" class="theme-toggle">
+    <span id="theme-icon" class="icon">🌙</span>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-black/5 dark:bg-gray-800/80 dark:border-white/10">
+    <nav class="mx-auto max-w-7xl px-4 lg:px-6 flex items-center justify-between h-16">
+      <a href="#inicio" class="flex items-center gap-3 font-extrabold text-primary text-xl dark:text-accent">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Antioqueñidad</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <li><a href="#origenes" class="hover:text-primary dark:hover:text-accent">Orígenes</a></li>
+        <li><a href="#vestimenta" class="hover:text-primary dark:hover:text-accent">Vestimenta</a></li>
+        <li><a href="#comida" class="hover:text-primary dark:hover:text-accent">Comida</a></li>
+        <li><a href="#presentaciones" class="hover:text-primary dark:hover:text-accent">Cultura</a></li>
+        <li><a href="#paisajes" class="hover:text-primary dark:hover:text-accent">Paisajes</a></li>
+        <li><a href="#figuras" class="hover:text-primary dark:hover:text-accent">Figuras</a></li>
+        <li><a href="#refranes" class="hover:text-primary dark:hover:text-accent">Refranes</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <a href="#cta" class="hidden sm:inline-block px-4 py-2 rounded-xl bg-accent text-white font-semibold hover:brightness-95">Explora</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Aquí va TODO el resto de tu contenido original tal cual -->
+
+  <!-- Hero -->
+  <section id="inicio" class="relative">
+    <div class="relative h-[78vh] min-h-[520px] w-full bg-paisaje bg-cover bg-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-white/0"></div>
+      <div class="absolute inset-0 grid place-items-center px-6">
+        <div class="glass card max-w-4xl p-8 md:p-12 text-center" data-aos="fade-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-primary/10 text-primary section-badge text-xs font-bold uppercase">
+            <i class="fa-solid fa-location-dot"></i> Antioquia, Colombia
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-primary">
+            ¡Viva la Antioqueñidad!
+          </h1>
+          <p class="mt-4 text-lg md:text-xl text-ink/80">
+            El alma de Antioquia en un solo lugar: historia, sabores, paisajes y talento que inspiran.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="#origenes" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold hover:brightness-95">
+              Descubrir
+            </a>
+            <a href="#comida" class="px-5 py-3 rounded-xl bg-white text-ink font-semibold border border-black/10 hover:bg-black/5">
+              ¡Tengo hambre!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg class="-mt-16" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#E8F5EE" d="M0,64L60,85.3C120,107,240,149,360,154.7C480,160,600,128,720,128C840,128,960,160,1080,149.3C1200,139,1320,85,1380,58.7L1440,32L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" />
+    </svg>
+  </section>
+
+  <main class="mx-auto max-w-7xl px-4 lg:px-6 space-y-16 pb-24">
+    <!-- Orígenes -->
+    <section id="origenes" class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+      <img loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.Y_S0y3TCXtOYRMIfPHn9kgHaDz?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Arrieros en montaña" class="card w-full h-72 object-cover" />
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+          <i class="fa-solid fa-mountain mr-2 text-accent"></i> Orígenes
+        </h2>
+        <p class="text-lg text-ink/80 leading-relaxed">
+          La antioqueñidad nace en las montañas colombianas, donde los arrieros abrieron caminos a punta de tesón. La colonización del siglo XIX impulsó pequeñas comunidades que se hicieron prósperas con comercio, café y oficios tradicionales.
+        </p>
+      </div>
+    </section>
+
+    <!-- Vestimenta Tradicional -->
+    <section id="vestimenta" class="grid md:grid-cols-2 gap-8 items-center card p-6 bg-white" data-aos="fade-up">
+      <div class="order-2 md:order-1">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+          <i class="fa-solid fa-hat-cowboy mr-2 text-accent"></i> Vestimenta Tradicional
+        </h2>
+        <p class="text-lg text-ink/80 leading-relaxed">
+          Carriel, ruana y sombrero son símbolos del paisa. En fiestas como la Feria de las Flores, las mujeres lucen faldas coloridas y blusas bordadas que bailan con la música de cuerdas y trovas.
+        </p>
+      </div>
+      <img loading="lazy" src="https://media.foodandtravel.mx/wp-content/uploads/2018/07/guelaguetza3.jpg" alt="Vestimenta tradicional colorida" class="order-1 md:order-2 w-full h-72 object-cover rounded-3xl" style="border-radius: var(--rounded);" />
+    </section>
+
+    <!-- Comida Tradicional -->
+    <section id="comida" class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1280&auto=format&fit=crop" alt="Bandeja paisa y comida típica" class="card w-full h-72 object-cover" />
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+          <i class="fa-solid fa-utensils mr-2 text-accent"></i> Comida Tradicional
+        </h2>
+        <p class="text-lg text-ink/80 leading-relaxed">
+          La bandeja paisa es generosa: frijoles, arroz, carne, chicharrón, huevo frito, plátano maduro y arepa. Otros clásicos: el mondongo bien sabroso y los buñuelos crujientes con chocolate caliente.
+        </p>
+      </div>
+    </section>
+
+    <!-- Presentaciones Culturales -->
+    <section id="presentaciones" class="card p-6 bg-white" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-primary text-center mb-6">
+        <i class="fa-solid fa-masks-theater mr-2 text-accent"></i> Presentaciones Culturales
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-6 mb-6">
+        <div class="p-5 rounded-2xl bg-secondary/70">
+          <h3 class="text-xl font-semibold text-accent">Feria de las Flores</h3>
+          <p class="text-ink/80 mt-2">Desfiles de silleteros con arreglos florales, música, comparsas y una ciudad que florece en cada esquina.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-secondary/70">
+          <h3 class="text-xl font-semibold text-accent">Trovadores</h3>
+          <p class="text-ink/80 mt-2">Competencias de trova: versos improvisados con picardía, ingenio y buen humor paisa.</p>
+        </div>
+      </div>
+      <img loading="lazy" src="https://i.pinimg.com/originals/7a/29/ad/7a29ade67214ac1aa2fd24877469bb74.jpg" alt="Desfile de flores en Medellín" class="w-full h-72 md:h-96 object-cover rounded-2xl" />
+    </section>
+
+    <!-- Paisajes Emblemáticos -->
+    <section id="paisajes" class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+          <i class="fa-solid fa-tree mr-2 text-accent"></i> Paisajes Emblemáticos
+        </h2>
+        <p class="text-lg text-ink/80 leading-relaxed">
+          La Piedra del Peñol y los colores de Guatapé, los embalses azules y los cafetales que perfuman el aire hacen de Antioquia un destino inolvidable.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.RGKa-rwU0GP2odc61KV9PgHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Piedra del Peñol" class="w-full h-40 md:h-56 object-cover rounded-2xl" />
+        <img loading="lazy" src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=800&auto=format&fit=crop" alt="Calle colorida de Guatapé" class="w-full h-40 md:h-56 object-cover rounded-2xl" />
+        <img loading="lazy" src="https://images.unsplash.com/photo-1470753937643-efeb931202a9?q=80&w=800&auto=format&fit=crop" alt="Cafetales en montaña" class="w-full h-40 md:h-56 object-cover rounded-2xl col-span-2" />
+      </div>
+    </section>
+
+    <!-- Figuras Ilustres -->
+    <section id="figuras" class="card p-6 bg-white" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-primary text-center mb-8">
+        <i class="fa-solid fa-star mr-2 text-accent"></i> Figuras Ilustres
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Fernando Botero -->
+        <figure class="text-center">
+          <img loading="lazy" src="https://tse4.mm.bing.net/th/id/OIP.Pu4L7kirbTjbt4PRcmswEAHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Escultura de Fernando Botero" class="w-full h-48 object-cover rounded-2xl" />
+          <figcaption class="mt-3">
+            <h3 class="text-lg font-semibold text-accent">Fernando Botero</h3>
+            <p class="text-sm text-ink/70">Maestro de las formas voluminosas.</p>
+          </figcaption>
+        </figure>
+        <!-- Mariana Pajón -->
+        <figure class="text-center">
+          <img loading="lazy" src="https://uploads.vibra.co/1/2021/11/mariana-pajon-nuevamente-campeona-del-mundo-en-bmx.jpg" alt="Mariana Pajón en BMX" class="w-full h-48 object-cover rounded-2xl" />
+          <figcaption class="mt-3">
+            <h3 class="text-lg font-semibold text-accent">Mariana Pajón</h3>
+            <p class="text-sm text-ink/70">Bicicrosista, doble campeona olímpica.</p>
+          </figcaption>
+        </figure>
+        <!-- Juanes -->
+        <figure class="text-center">
+          <img loading="lazy" src="https://cdn2.excelsior.com.mx/media/inside-the-note/pictures/2023/05/09/juanes-inter.jpg" alt="Juanes en concierto" class="w-full h-48 object-cover rounded-2xl" />
+          <figcaption class="mt-3">
+            <h3 class="text-lg font-semibold text-accent">Juanes</h3>
+            <p class="text-sm text-ink/70">Cantautor y referente del pop latino.</p>
+          </figcaption>
+        </figure>
+        <!-- Caterine Ibargüen -->
+        <figure class="text-center">
+          <img loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.AV2ETQjqnu5lbf5Pklds6wHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Caterine Ibargüen en competencia" class="w-full h-48 object-cover rounded-2xl" />
+          <figcaption class="mt-3">
+            <h3 class="text-lg font-semibold text-accent">Caterine Ibargüen</h3>
+            <p class="text-sm text-ink/70">Campeona mundial de triple salto.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Refranes -->
+    <section id="refranes" class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-4">
+        <i class="fa-solid fa-quote-left mr-2 text-accent"></i> Refranes Característicos
+      </h2>
+      <ul class="grid gap-3 text-lg text-ink/80">
+        <li class="card p-4 bg-white">“A buen hambre, no hay mal pan.”</li>
+        <li class="card p-4 bg-white">“El que no tiene pa’l trago, que no salga.”</li>
+        <li class="card p-4 bg-white">“A punta de machete, se abrió el camino.”</li>
+        <li class="card p-4 bg-white">“Paisa que se respete, lleva carriel.”</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="relative card overflow-hidden" data-aos="fade-up">
+      <div class="absolute inset-0 bg-textura bg-cover bg-center opacity-20"></div>
+      <div class="relative p-8 md:p-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-2">
+          <i class="fa-solid fa-heart mr-2 text-accent"></i> ¡Vive la Antioqueñidad!
+        </h2>
+        <p class="text-lg text-ink/80 max-w-2xl mx-auto">
+          Visita Antioquia, prueba su comida y conoce su gente. ¡Siempre bienvenido!
+        </p>
+        <div class="mt-6 flex justify-center">
+          <a href="#inicio" class="px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:brightness-95">
+            Planear visita
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-10 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Antioqueñidad</h3>
+        <p class="text-white/80">Hecho con amor en Antioquia. Este sitio celebra nuestras raíces, nuestra cultura y nuestro futuro.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Secciones</h3>
+        <ul class="space-y-1 text-white/90">
+          <li><a href="#origenes" class="hover:underline">Orígenes</a></li>
+          <li><a href="#vestimenta" class="hover:underline">Vestimenta</a></li>
+          <li><a href="#comida" class="hover:underline">Comida</a></li>
+          <li><a href="#presentaciones" class="hover:underline">Cultura</a></li>
+          <li><a href="#paisajes" class="hover:underline">Paisajes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Créditos de imágenes</h3>
+        <p class="text-white/80 text-sm">Fotos de Unsplash y Wikimedia Commons, usadas con fines ilustrativos.</p>
+      </div>
+    </div>
+    <div class="border-t border-white/20">
+      <p class="text-center py-4 text-sm">&copy; 2025 ¡Viva la Antioqueñidad!</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 700, easing: 'ease-out' });
+
+    const htmlElement = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Cargar tema guardado
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlElement.classList.add('dark');
+      themeIcon.textContent = '☀️';
+    }
+
+    // Cambiar tema
+    themeToggleBtn.addEventListener('click', () => {
+      themeIcon.classList.add('rotate');
+      setTimeout(() => themeIcon.classList.remove('rotate'), 500);
+
+      if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlElement.classList.add('dark');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
